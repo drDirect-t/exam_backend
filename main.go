@@ -9,6 +9,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// -------------เริ่มส่วน Authentication--------------------
 var jwtKey = []byte("secret_key")
 
 var admin = map[string]string{
@@ -114,6 +115,8 @@ func RefreshToken(w http.ResponseWriter, r *http.Request) {
 		Expires: expirationTime,
 	})
 }
+
+//-------------จบส่วน Authentication--------------------
 
 func main() {
 	router := mux.NewRouter()
